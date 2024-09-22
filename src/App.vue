@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
@@ -27,4 +27,41 @@ nav {
     }
   }
 }
-</style>
+</style> -->
+
+<template>
+  <div id="app">
+    <ClanTable :players="players" />
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import ClanTable from './components/ClanTable.vue';
+
+export default defineComponent({
+  components: {
+    ClanTable,
+  },
+  data() {
+    return {
+      players: [
+        {
+          name: 'Player 1',
+          tag: 'ABC123',
+          averageFame: 2500,
+          fameString: '2500 + 2600 + 2700',
+          warsCount: 10,
+        },
+        {
+          name: 'Player 2',
+          tag: 'ABC124',
+          averageFame: 2700,
+          fameString: '2500 + 2600 + 3700',
+          warsCount: 8,
+        },
+      ],
+    };
+  },
+});
+</script>
